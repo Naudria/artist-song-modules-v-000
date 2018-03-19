@@ -5,11 +5,16 @@ require 'pry'
 
 class Artist
   extend Memorable
-  
+
   attr_accessor :name
   attr_reader :songs
 
   @@artists = []
+
+  extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
+  extend Findable
+  include Paramable
 
   def self.find_by_name(name)
     @@artists.detect{|a| a.name == name}
