@@ -13,6 +13,6 @@ module Memorable
   end
 
   def self.count
-    self.all.count
+    @@songs.count
   end
 end
